@@ -1,13 +1,15 @@
 # Django #
 *.log
 *.pot
-*.pyc
 __pycache__
+ __pycache__/
+ *.pyc
 db.sqlite3
 media
-
+migrations 
 # Backup files # 
-*.bak 
+*.bak
+__pycache__/
 
 # If you are using PyCharm # 
 .idea/**/workspace.xml 
