@@ -1,12 +1,13 @@
 # Django #
 *.log
 *.pot
-__pycache__
- __pycache__/
- *.pyc
+*.pyc
+__pycache__/
 db.sqlite3
+db.sqlite3-journal
 media
-migrations 
+
+*/migrations/
 # Backup files # 
 *.bak
 __pycache__/
