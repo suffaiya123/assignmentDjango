@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.hashers import make_password
 
 # Create your models here.
 
@@ -14,8 +15,10 @@ class CustomUserManager(BaseUserManager):
         if not phone_number or not email:
             raise ValueError("The email or phone number must be set")
         email = self.normalize_email(email)
-        user = self.model(phone_number=phone_number, email=email, **extra_fields)
-        user.set_password(password)
+        password = make_password(password)
+        user = self.model(
+            phone_number=phone_number, email=email, password=password, **extra_fields
+        )
         user.save(using=self._db)
         return user
 
